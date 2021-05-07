@@ -8,6 +8,10 @@ class Triangle {
     if (numbers.some(i => i <= 0) || ((numbers.sort()[2] * 2) > numbers.reduce((acc, curr) => parseFloat(acc) + parseFloat(curr)))) alert("Invalid Triangle");
     else if (numbers.every(i => !isNaN(i))) this.triangle(numbers);
   }
-
+  triangle(numbers) {
+    if (numbers[0] === numbers[1] && numbers[1] === numbers[2]) alert("Equilateral");
+    else if (numbers.sort().some((i, index) => i === numbers[index + 1])) alert("Isosceles");
+    else if (numbers.every(i => numbers.indexOf(i) === numbers.lastIndexOf(i))) alert("Scalene");
+  }
 }
 
