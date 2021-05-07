@@ -20,4 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const number2 = prompt("Enter the second number : ");
   const number3 = prompt("Enter the third number : ");
 
+  const triangle = new Triangle(number1, number2, number3);
+  const numbers = Array.from(Object.values(triangle));
+  triangle.valid(numbers);
 })
